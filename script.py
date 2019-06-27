@@ -99,21 +99,19 @@ def mysql_write_site(myConnection, url, tieude):
     mysql.execute(sql)
     myConnection.commit()
 
-while True:
-    myConnection = pymysql.connect\
-    (host=hostname, user=username, passwd=password, db=database)
-    url = 'https://canhme.com/nhan-hoa/'
-    get_data = requests.get(url)
-    soup = BeautifulSoup(get_data.text, "lxml")
-    info = soup.find_all(class_="entry-title")
+myConnection = pymysql.connect\
+(host=hostname, user=username, passwd=password, db=database)
+url = 'https://canhme.com/nhan-hoa/'
+get_data = requests.get(url)
+soup = BeautifulSoup(get_data.text, "lxml")
+info = soup.find_all(class_="entry-title")
 
-    for line_n in info:
-        url_n = getURL(line_n)
-        title = getTitle(line_n)
-        if url_n not in mysql_query(myConnection, "links", "site"):
-            mysql_write_site(myConnection, url_n, title)
-        id_site = mysql_get_id(myConnection, "idsite", "site", "links", url_n)
-        mysql_write_new_info(url_n, id_site, token, chat_id)
+for line_n in info:
+    url_n = getURL(line_n)
+    title = getTitle(line_n)
+    if url_n not in mysql_query(myConnection, "links", "site"):
+        mysql_write_site(myConnection, url_n, title)
+    id_site = mysql_get_id(myConnection, "idsite", "site", "links", url_n)
+    mysql_write_new_info(url_n, id_site, token, chat_id)
 
-    myConnection.close()
-    time.sleep(60)
+myConnection.close()

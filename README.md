@@ -73,9 +73,10 @@ Ta cần khai báo thông tin của mysql để tiến hành lưu dữ liệu v�
 Trong đó:
  * `hostname`: địa chỉ IP của máy cài MySQL
  * `username`: user mysql sử dụng để thao tác báo DB
- * `password`: Passqord để logị vào mysql
+ * `password`: Password để login vào mysql
  * `database`: Tên database để ghi dữ liệu vào
  * `token`: Token của telegram bot
  * `chat_id`: Chat_id telegram mà bạn muốn gửi tin nhắn đến.
 
 Để tạo telegram bot hoặc lấy chat_id của telegram của bạn tham khảo [tại đây](https://blog.cloud365.vn/monitor/zabbix4-thiet-lap-canh-bao-qua-telegram/)
+
