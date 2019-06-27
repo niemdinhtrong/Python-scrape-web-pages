@@ -31,6 +31,10 @@ pip install lxml
 
 **pymsql**
 
+```
+pip install PyMySQL
+```
+
 ### Tạo một database trên mysql
 
 ```
