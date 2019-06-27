@@ -46,7 +46,7 @@ grant all privileges on DB_html.* to 'html'@'%' identified by "html123@";
 
 use DB_html;
 
-create table user (iduser int not null auto_increment, username varchar(40) not null, primary key (iduser));
+create table user (iduser int not null auto_increment, username text CHARSET utf8 not null, primary key (iduser));
 
 create table site (idsite int not null auto_increment, links text not null, tieude text CHARSET utf8, primary key (idsite));
 
